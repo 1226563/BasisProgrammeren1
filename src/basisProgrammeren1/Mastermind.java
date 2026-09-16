@@ -11,6 +11,10 @@ public class Mastermind extends Text01 {
 		String paarsPin="Paars";
 		String orangePin="Oranje";
 		
+		String zwartPin="Zwart";
+		String witPin="Wit";
+		String leegPin="Leeg";
+		
 	}
 
 }
