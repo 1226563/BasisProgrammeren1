@@ -1,0 +1,55 @@
+codemaker = "Speler 1"
+codekraker = "Speler 2"
+
+kleuren = ["blauw", "oranje", "paars", "groen", "rood", "geel"]
+
+codePin1 = willekeurige kleur
+codePin2 = willekeurige kleur
+codePin3 = willekeurige kleur
+codePin4 = willekeurige kleur
+
+code = [codePin1, codePin2, codePin3, codePin4]
+
+rij = 1
+
+gewonnen = FALSE
+
+gok1 = willekeurige kleur
+gok2 = willekeurige kleur
+gok3 = willekeurige kleur
+gok4 = willekeurige kleur
+
+poging = [gok1, gok2, gok3, gok4]
+
+zwartePinnen = 0
+wittePinnen = 0
+
+
+ALS gok1 = codePin1 DAN
+    zwartePinnen = zwartePinnen + 1
+EINDE ALS
+
+ALS gok2 = codePin2 DAN
+    zwartePinnen = zwartePinnen + 1
+EINDE ALS
+
+ALS gok3 = codePin3 DAN
+    zwartePinnen = zwartePinnen + 1
+EINDE ALS
+
+ALS gok4 = codePin4 DAN
+    zwartePinnen = zwartePinnen + 1
+EINDE ALS
+
+
+ALS zwartePinnen = 4 DAN
+    codekraker wint
+    gewonnen = TRUE
+
+ANDERS ALS rij = 10 DAN
+    codemaker wint
+    gewonnen = TRUE
+
+ANDERS
+    rij = rij + 1
+EINDE ALS
