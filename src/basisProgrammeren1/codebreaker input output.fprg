@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="codebreaker input output"/>
+        <attribute name="authors" value="jayde"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-18 03:27:29 "/>
+        <attribute name="created" value="amF5ZGU7U0NIT09MTEFQVE9QOzIwMjYtMDktMTg7IjAyOjU4OjM3ICI7MjY1Mw=="/>
+        <attribute name="edited" value="amF5ZGU7U0NIT09MTEFQVE9QOzIwMjYtMDktMTg7IjAzOjI3OjI5ICI7MzsyNzYx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="gok1, gok2, gok3, gok4" type="String" array="False" size=""/>
+            <declare name="rij1, rij2, rij3, rij4, rij5, rij6, rij7, rij8, rij9, rij10" type="String" array="False" size=""/>
+            <output expression="&quot;rij 1 vakje 1:&quot;" newline="True"/>
+            <input variable="gok1"/>
+            <output expression="&quot;rij 2 vakje 2:&quot;" newline="True"/>
+            <input variable="gok2"/>
+            <output expression="&quot;rij 3 vakje 3:&quot;" newline="True"/>
+            <input variable="gok3"/>
+            <output expression="&quot;rij 4 vakje 4:&quot;" newline="True"/>
+            <input variable="gok4"/>
+            <output expression="&quot;&quot; &amp; gok1 &amp; &quot; &quot; &amp; gok2 &amp; &quot; &quot; &amp; gok3 &amp; &quot; &quot; &amp; gok4" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

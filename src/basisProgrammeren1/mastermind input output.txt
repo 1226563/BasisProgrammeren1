@@ -1,0 +1,24 @@
+mastermind input output
+
+BEGIN
+
+DECLARE gok1 AS STRING
+DECLARE gok2 AS STRING
+DECLARE gok3 AS STRING
+DECLARE gok4 AS STRING
+
+OUTPUT "rij 1 vakje 1:"
+INPUT gok1
+
+OUTPUT "rij 2 vakje 2:"
+INPUT gok2
+
+OUTPUT "rij 3 vakje 3:"
+INPUT gok3
+
+OUTPUT "rij 4 vakje 4:"
+INPUT gok4
+
+OUTPUT "" & gok1 & " " & gok2 & " " & gok3 & " " & gok4
+
+END
