@@ -8,7 +8,6 @@ public class MastermindVariables {
 		String codekraker = "Speler 2";
 
 		String[] kleuren = {"blauw", "oranje", "paars", "groen", "rood", "geel"};
-
 		String codePin1;
 		String codePin2;
 		String codePin3;

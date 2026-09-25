@@ -1,0 +1,88 @@
+BEGIN
+
+DECLARE codemaker, codekraker AS STRING
+DECLARE blauwPin, oranjePin, paarsPin, groenPin, roodPin, geelPin AS STRING
+DECLARE zwartePinnen, wittePinnen AS INTEGER
+
+blauwPin = "blauw"
+oranjePin = "oranje"
+paarsPin = "paars"
+groenPin = "groen"
+roodPin = "rood"
+geelPin = "geel"
+
+zwartePinnen = 0
+wittePinnen = 0
+
+DECLARE gok1, gok2, gok3, gok4 AS STRING
+DECLARE codePin1, codePin2, codePin3, codePin4 AS STRING
+
+codePin1 = blauwPin
+codePin2 = groenPin
+codePin3 = roodPin
+codePin4 = geelPin
+
+OUTPUT "Voer kleur 1 in:"
+INPUT gok1
+
+OUTPUT "Voer kleur 2 in:"
+INPUT gok2
+
+OUTPUT "Voer kleur 3 in:"
+INPUT gok3
+
+OUTPUT "Voer kleur 4 in:"
+INPUT gok4
+
+
+IF gok1 = codePin1 THEN
+OUTPUT "Zwart"
+ELSE IF gok1 = codePin2 THEN
+OUTPUT "Wit"
+ELSE IF gok1 = codePin3 THEN
+OUTPUT "Wit"
+ELSE IF gok1 = codePin4 THEN
+OUTPUT "Wit"
+ELSE
+OUTPUT "Niks"
+
+
+IF gok2 = codePin2 THEN
+OUTPUT "Zwart"
+ELSE IF gok2 = codePin1 THEN
+OUTPUT "Wit"
+ELSE IF gok2 = codePin3 THEN
+OUTPUT "Wit"
+ELSE IF gok2 = codePin4 THEN
+OUTPUT "Wit"
+ELSE
+OUTPUT "Niks"
+
+IF gok3 = codePin3 THEN
+OUTPUT "Zwart"
+ELSE IF gok3 = codePin1 THEN
+OUTPUT "Wit"
+ELSE IF gok3 = codePin2 THEN
+OUTPUT "Wit"
+ELSE IF gok3 = codePin4 THEN
+OUTPUT "Wit"
+ELSE
+OUTPUT "Niks"
+
+IF gok4 = codePin4 THEN
+OUTPUT "Zwart"
+ELSE IF gok4 = codePin1 THEN
+OUTPUT "Wit"
+ELSE IF gok4 = codePin2 THEN
+OUTPUT "Wit"
+ELSE IF gok4 = codePin3 THEN
+OUTPUT "Wit"
+ELSE
+OUTPUT "Niks"
+
+OUTPUT "Jouw gok is: " + gok1 + " " + gok2 + " " + gok3 + " " + gok4
+IF gok1 = codePin1 && gok2 = codePin2 && gok3 = codePin3 && gok4 = codePin4 THEN
+OUTPUT "gewonnen"
+ELSE
+OUTPUT "verloren"
+END
