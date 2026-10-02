@@ -4,17 +4,18 @@
         <attribute name="name" value="codebreaker keuzes"/>
         <attribute name="authors" value="jayde"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2026-09-25 04:18:52 "/>
+        <attribute name="saved" value="2026-10-02 03:47:44 "/>
         <attribute name="created" value="amF5ZGU7U0NIT09MTEFQVE9QOzIwMjYtMDktMjU7IjAyOjU2OjI3ICI7MjY0OA=="/>
         <attribute name="edited" value="amF5ZGU7U0NIT09MTEFQVE9QOzIwMjYtMDktMjU7IjAyOjU2OjMwICI7MTtqYXlkZTtTQ0hPT0xMQVBUT1A7MjAyNi0wOS0xODsiMDI6NTg6MzcgIjtjb2RlYnJlYWtlciBpbnB1dCBvdXRwdXQuZnByZzs4NDU0"/>
-        <attribute name="edited" value="amF5ZGU7U0NIT09MTEFQVE9QOzIwMjYtMDktMjU7IjA0OjE4OjUyICI7NDsyNzU3"/>
+        <attribute name="edited" value="amF5ZGU7U0NIT09MTEFQVE9QOzIwMjYtMTAtMDI7IjAzOjM3OjQ1ICI7MTtqYXlkZTtTQ0hPT0xMQVBUT1A7MjAyNi0wOS0yNTsiMDI6NTY6MjcgIjtjb2RlYnJlYWtlcl9rZXV6ZXMyX2FhbmdlcGFzdC5mcHJnOzg5ODA="/>
+        <attribute name="edited" value="amF5ZGU7U0NIT09MTEFQVE9QOzIwMjYtMTAtMDI7IjAzOjQ3OjQ0ICI7MTc7Mjc5OA=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
             <declare name="codemaker, codekraker" type="String" array="False" size=""/>
             <declare name="blauwPin, oranjePin, paarsPin, groenPin, roodPin, geelPin" type="String" array="False" size=""/>
-            <declare name="zwartePinnen, wittePinnen" type="Integer" array="False" size=""/>
+            <declare name="zwartePinnen, wittePinnen, rij" type="Integer" array="False" size=""/>
             <assign variable="blauwPin" expression="&quot;blauw&quot;"/>
             <assign variable="oranjePin" expression="&quot;oranje&quot;"/>
             <assign variable="paarsPin" expression="&quot;paars&quot;"/>
@@ -29,138 +30,157 @@
             <assign variable="codePin2" expression="groenPin"/>
             <assign variable="codePin3" expression="roodPin"/>
             <assign variable="codePin4" expression="geelPin"/>
-            <output expression="&quot;Voer kleur 1 in:&quot;" newline="True"/>
-            <input variable="gok1"/>
-            <output expression="&quot;Voer kleur 2 in:&quot;" newline="True"/>
-            <input variable="gok2"/>
-            <output expression="&quot;Voer kleur 3 in:&quot;" newline="True"/>
-            <input variable="gok3"/>
-            <output expression="&quot;Voer kleur 4 in:&quot;" newline="True"/>
-            <input variable="gok4"/>
-            <if expression="gok1 = codePin1">
+            <for variable="rij" start="1" end="10" direction="inc" step="1">
+                <if expression="zwartePinnen &lt; 4">
+                    <then>
+                        <assign variable="zwartePinnen" expression="0"/>
+                        <output expression="&quot;Voer kleur 1 in:&quot;" newline="True"/>
+                        <input variable="gok1"/>
+                        <output expression="&quot;Voer kleur 2 in:&quot;" newline="True"/>
+                        <input variable="gok2"/>
+                        <output expression="&quot;Voer kleur 3 in:&quot;" newline="True"/>
+                        <input variable="gok3"/>
+                        <output expression="&quot;Voer kleur 4 in:&quot;" newline="True"/>
+                        <input variable="gok4"/>
+                        <if expression="gok1 = codePin1">
+                            <then>
+                                <assign variable="zwartePinnen" expression="zwartePinnen + 1"/>
+                                <output expression="&quot;Zwart&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="gok1 = codePin2">
+                                    <then>
+                                        <output expression="&quot;wit&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="gok1 = codePin3">
+                                            <then>
+                                                <output expression="&quot;wit&quot;" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <if expression="gok1 = codePin4">
+                                                    <then>
+                                                        <output expression="&quot;wit&quot;" newline="True"/>
+                                                    </then>
+                                                    <else>
+                                                        <output expression="&quot;niks&quot;" newline="True"/>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                        <if expression="gok2 = codePin2">
+                            <then>
+                                <output expression="&quot;Zwart&quot;" newline="True"/>
+                                <assign variable="zwartePinnen" expression="zwartePinnen + 1"/>
+                            </then>
+                            <else>
+                                <if expression="gok2 = codePin1">
+                                    <then>
+                                        <output expression="&quot;wit&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="gok2 = codePin3">
+                                            <then>
+                                                <output expression="&quot;wit&quot;" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <if expression="gok2 = codePin4">
+                                                    <then>
+                                                        <output expression="&quot;wit&quot;" newline="True"/>
+                                                    </then>
+                                                    <else>
+                                                        <output expression="&quot;niks&quot;" newline="True"/>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                        <if expression="gok3 = codePin3">
+                            <then>
+                                <output expression="&quot;Zwart&quot;" newline="True"/>
+                                <assign variable="zwartePinnen" expression="zwartePinnen + 1"/>
+                            </then>
+                            <else>
+                                <if expression="gok3 = codePin1">
+                                    <then>
+                                        <output expression="&quot;wit&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="gok3 = codePin2">
+                                            <then>
+                                                <output expression="&quot;wit&quot;" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <if expression="gok3 = codePin4">
+                                                    <then>
+                                                        <output expression="&quot;wit&quot;" newline="True"/>
+                                                    </then>
+                                                    <else>
+                                                        <output expression="&quot;niks&quot;" newline="True"/>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                        <if expression="gok4 = codePin4">
+                            <then>
+                                <output expression="&quot;Zwart&quot;" newline="True"/>
+                                <assign variable="zwartePinnen" expression="zwartePinnen + 1"/>
+                            </then>
+                            <else>
+                                <if expression="gok4 = codePin1">
+                                    <then>
+                                        <output expression="&quot;wit&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="gok4 = codePin2">
+                                            <then>
+                                                <output expression="&quot;wit&quot;" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <if expression="gok4 = codePin3">
+                                                    <then>
+                                                        <output expression="&quot;wit&quot;" newline="True"/>
+                                                    </then>
+                                                    <else>
+                                                        <output expression="&quot;niks&quot;" newline="True"/>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                        <output expression="&quot;Jouw gok is: &quot; &amp; gok1 &amp; &quot; &quot; &amp; gok2 &amp; &quot; &quot; &amp; gok3 &amp; &quot; &quot; &amp; gok4" newline="True"/>
+                        <if expression="zwartePinnen = 4">
+                            <then>
+                                <assign variable="rij" expression="11"/>
+                                <output expression="&quot;gewonnen&quot;" newline="True"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </then>
+                    <else>
+                        <output expression="&quot;Hoi &quot; &amp; rij" newline="True"/>
+                    </else>
+                </if>
+            </for>
+            <if expression="zwartePinnen &lt; 4">
                 <then>
-                    <output expression="&quot;Zwart&quot;" newline="True"/>
-                </then>
-                <else>
-                    <if expression="gok1 = codePin2">
-                        <then>
-                            <output expression="&quot;wit&quot;" newline="True"/>
-                        </then>
-                        <else>
-                            <if expression="gok1 = codePin3">
-                                <then>
-                                    <output expression="&quot;wit&quot;" newline="True"/>
-                                </then>
-                                <else>
-                                    <if expression="gok1 = codePin4">
-                                        <then>
-                                            <output expression="&quot;wit&quot;" newline="True"/>
-                                        </then>
-                                        <else>
-                                            <output expression="&quot;niks&quot;" newline="True"/>
-                                        </else>
-                                    </if>
-                                </else>
-                            </if>
-                        </else>
-                    </if>
-                </else>
-            </if>
-            <if expression="gok2 = codePin2">
-                <then>
-                    <output expression="&quot;Zwart&quot;" newline="True"/>
-                </then>
-                <else>
-                    <if expression="gok2 = codePin1">
-                        <then>
-                            <output expression="&quot;wit&quot;" newline="True"/>
-                        </then>
-                        <else>
-                            <if expression="gok2 = codePin3">
-                                <then>
-                                    <output expression="&quot;wit&quot;" newline="True"/>
-                                </then>
-                                <else>
-                                    <if expression="gok2 = codePin4">
-                                        <then>
-                                            <output expression="&quot;wit&quot;" newline="True"/>
-                                        </then>
-                                        <else>
-                                            <output expression="&quot;niks&quot;" newline="True"/>
-                                        </else>
-                                    </if>
-                                </else>
-                            </if>
-                        </else>
-                    </if>
-                </else>
-            </if>
-            <if expression="gok3 = codePin3">
-                <then>
-                    <output expression="&quot;Zwart&quot;" newline="True"/>
-                </then>
-                <else>
-                    <if expression="gok3 = codePin1">
-                        <then>
-                            <output expression="&quot;wit&quot;" newline="True"/>
-                        </then>
-                        <else>
-                            <if expression="gok3 = codePin2">
-                                <then>
-                                    <output expression="&quot;wit&quot;" newline="True"/>
-                                </then>
-                                <else>
-                                    <if expression="gok2 = codePin4">
-                                        <then>
-                                            <output expression="&quot;wit&quot;" newline="True"/>
-                                        </then>
-                                        <else>
-                                            <output expression="&quot;niks&quot;" newline="True"/>
-                                        </else>
-                                    </if>
-                                </else>
-                            </if>
-                        </else>
-                    </if>
-                </else>
-            </if>
-            <if expression="gok4 = codePin4">
-                <then>
-                    <output expression="&quot;Zwart&quot;" newline="True"/>
-                </then>
-                <else>
-                    <if expression="gok4 = codePin1">
-                        <then>
-                            <output expression="&quot;wit&quot;" newline="True"/>
-                        </then>
-                        <else>
-                            <if expression="gok4 = codePin2">
-                                <then>
-                                    <output expression="&quot;wit&quot;" newline="True"/>
-                                </then>
-                                <else>
-                                    <if expression="gok4 = codePin3">
-                                        <then>
-                                            <output expression="&quot;wit&quot;" newline="True"/>
-                                        </then>
-                                        <else>
-                                            <output expression="&quot;niks&quot;" newline="True"/>
-                                        </else>
-                                    </if>
-                                </else>
-                            </if>
-                        </else>
-                    </if>
-                </else>
-            </if>
-            <output expression="&quot;Jouw gok is: &quot; &amp; gok1 &amp; &quot; &quot; &amp; gok2 &amp; &quot; &quot; &amp; gok3 &amp; &quot; &quot; &amp; gok4" newline="True"/>
-            <if expression="gok1 = codePin1 and gok2 = codePin2 and gok3 = codePin3 and gok4 = codePin4">
-                <then>
-                    <output expression="&quot;gewonnen&quot;" newline="True"/>
-                </then>
-                <else>
                     <output expression="&quot;verloren&quot;" newline="True"/>
-                </else>
+                </then>
+                <else/>
             </if>
         </body>
     </function>
