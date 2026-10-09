@@ -120,13 +120,13 @@ public class Mastermind {
 				System.out.println("Jouw gok is: " + gok1 + " " + gok2 + " " + gok3 + " " + gok4);
 
 				if (zwartePinnen == 4) {
-					System.out.println("gewonnen");
+					System.out.println("Je hebt gewonnen");
 				}
 			}
 		}
 
 		if (zwartePinnen < 4) {
-			System.out.println("verloren");
+			System.out.println("Je hebt verloren");
 		}
 
 	}
